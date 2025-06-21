@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Overview
 
-## Getting Started
+This monorepo contains multiple applications and shared packages managed with pnpm and Turborepo.
 
-First, run the development server:
+## Architecture
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **apps/**: Contains application projects such as admin, brand1-site, and api.
+- **packages/**: Contains shared UI components and utilities.
+- **pnpm-workspace.yaml**: Defines the pnpm workspace.
+- **turbo.json**: Turborepo configuration for build and caching.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contribution Guidelines
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Use feature branches for all new work.
+- Require pull requests with at least one approving review.
+- Follow coding standards enforced by ESLint and Prettier.
+- Write tests for new features and bug fixes.
+- Keep commits atomic and well-documented.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Branching Strategy
 
-## Learn More
+We follow GitFlow branching strategy:
 
-To learn more about Next.js, take a look at the following resources:
+- `main`: Production-ready code.
+- `develop`: Integration branch for features.
+- `feature/*`: Feature branches off develop.
+- `release/*`: Release preparation branches.
+- `hotfix/*`: Hotfix branches off main.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Environment Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Install Node.js (version 18 or later recommended).
+2. Install pnpm globally: `npm install -g pnpm`.
+3. Run `pnpm install` at the root to install dependencies.
+4. Use `pnpm run dev` or appropriate scripts to start apps.
+5. Ensure Docker is installed and running for MCP servers.
+6. Use the provided MCP servers for development and testing.
 
-## Deploy on Vercel
+## Architecture Diagrams
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+(Include architecture diagrams here or links to diagrams in the docs folder)

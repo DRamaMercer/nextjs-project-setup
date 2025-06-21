@@ -1,0 +1,58 @@
+# Blackbox AI Coding and Integrity Rules
+
+# 1. Code Quality and Standards
+- Enforce ESLint and Prettier configurations across all packages and apps.
+- All code must pass linting and formatting checks before merging.
+- Use TypeScript with strict type checking enabled.
+
+# 2. Branching and Code Review
+- Use feature branches for all new work.
+- Require pull requests with at least one approving review.
+- No direct commits to main or production branches.
+
+# 3. Testing
+- Write unit tests for all new components and functions.
+- Write integration tests for critical workflows.
+- Use E2E tests for user-facing features.
+- All tests must pass in CI before merging.
+
+# 4. Modular Architecture
+- Keep shared UI components and utilities in /packages.
+- Avoid duplication by reusing shared packages.
+- Follow separation of concerns and single responsibility principles.
+
+# 5. Documentation
+- Document all public APIs, components, and utilities.
+- Maintain up-to-date README files for each package/app.
+- Include usage examples and expected behaviors.
+
+# 6. Dependency Management
+- Use automated tools to keep dependencies up to date.
+- Regularly audit for security vulnerabilities.
+
+# 7. Security and Secrets
+- Use environment variables for all secrets and sensitive data.
+- Do not commit secrets or credentials to the repository.
+- Implement role-based access control and RLS policies.
+
+# 8. Logging and Monitoring
+- Implement consistent logging across backend and frontend.
+- Integrate error tracking (e.g., Sentry) for production monitoring.
+
+# 9. Refactoring and Maintenance
+- Schedule regular codebase reviews and refactoring sprints.
+- Address technical debt promptly.
+
+# 10. CI/CD
+- Automate linting, testing, and deployment pipelines.
+- Use feature flags for gradual rollouts and testing in production.
+
+# 11. Performance
+- Optimize database queries and API responses.
+- Monitor and improve frontend performance metrics.
+
+# 12. Collaboration
+- Communicate changes clearly in PR descriptions.
+- Use issue tracking for task management and prioritization.
+
+# End of Blackbox AI Coding and Integrity Rules

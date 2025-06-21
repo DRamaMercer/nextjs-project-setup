@@ -1,0 +1,32 @@
+---
+import { onMount, useState } from 'astro/jsx-runtime'
+
+const [cmsContent, setCmsContent] = useState(null)
+
+onMount(async () => {
+  // Mock CMS content fetching
+  const response = await fetch('/api/cms-content')
+  const data = await response.json()
+  setCmsContent(data)
+})
+---
+
+<html lang="en" class="bg-white text-black">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brand1 Site</title>
+    <link href="/dist/output.css" rel="stylesheet" />
+  </head>
+  <body class="min-h-screen p-8">
+    <h1 class="text-4xl font-bold mb-6">Welcome to Brand1 Site</h1>
+    {cmsContent ? (
+      <section>
+        <h2 class="text-2xl font-semibold mb-4">CMS Content</h2>
+        <pre>{JSON.stringify(cmsContent, null, 2)}</pre>
+      </section>
+    ) : (
+      <p>Loading CMS content...</p>
+    )}
+  </body>
+</html>
